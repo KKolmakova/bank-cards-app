@@ -1,0 +1,24 @@
+#docker-compose.yml — определяет сервисы для разработки и тестирования.
+#
+#Что нужно сделать:
+#   - Настроить сервисы для:
+#      - PostgreSQL (или MySQL) с начальной базой.
+#      - Приложения Spring Boot (если нужно).
+#  - Открыть нужные порты (например, 5432, 8080).
+#  - Настроить volume для хранения данных БД.
+
+version: '3.8'
+services:
+  db:
+    image: mysql:8
+    container_name: bank-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: bankdb
+      MYSQL_USER: bankuser
+      MYSQL_PASSWORD: bankpass
+      MYSQL_ROOT_PASSWORD: rootpass
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./src/main/resources:/docker-entrypoint-initdb.d
