@@ -60,7 +60,7 @@ docker-compose up -d
 
 **POST** `/admin/cards`
 
-```json
+```bash
 POST http://localhost:8095/admin/cards
 Authorization: Bearer <token>
 Content-Type: application/json
@@ -139,7 +139,7 @@ Authorization: Bearer <token>
 
 **POST** `/admin/users`
 
-```json
+```bash
 POST http://localhost:8095/admin/users
 Authorization: Bearer <token>
 Content-Type: application/json
@@ -197,7 +197,7 @@ Authorization: Bearer <token>
 
 **POST** `/cards/transfer`
 
-```json
+```bash
 POST http://localhost:8095/cards/transfer
 Authorization: Bearer <token>
 Content-Type: application/json
